@@ -1,0 +1,19 @@
+.signup-container{
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 50px auto;
+}
+
+.signup-container form{
+    border: 3px solid #f1f1f1;
+   
+    padding:15px;
+    
+}
+
+.signup-container form >*{
+    margin-top:20px;
+}

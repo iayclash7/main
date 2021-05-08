@@ -1,0 +1,61 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block head%}
+
+<title>CartNp || Buy and Sell</title>
+<link rel="stylesheet" href="{%static 'index.css'%}" type="text/css">
+
+{%endblock%}
+
+{%block content%}
+
+<div class="card-container">
+
+    <h1 id="product-heading">Search Results:</h1>
+
+    {%if user.is_authenticated%}
+
+    
+    {%for a in my_dict1%}
+
+<div class="card">
+    <img src="{{a.product_image.url}}" alt="Denim Jeans" style="width:100%;">
+    <h3>{{a.product_name}}</h3>
+    <p class="price">Price: Rs {{a.product_price}}</p>
+    <p>Contact: {{a.product_contact}}</p>
+    <p>{{a.product_des}}</p>  
+    <p><button>Add to Cart</button></p>
+  </div> 
+  {%endfor%}
+
+  {%else%}
+
+
+
+    {%for a in my_dict1%}
+
+<div class="card">
+    <img src="{{a.product_image.url}}" alt="Denim Jeans" style="width:100%;">
+    <h3>{{a.product_name}}</h3>
+    <p class="price">Price: Rs {{a.product_price}}</p>
+    <p>{{a.product_des}}</p>
+    <p><button>Add to Cart</button></p>
+  </div> 
+
+  {%endfor%}
+
+  {%endif%}
+
+ 
+  
+
+</div>
+
+  
+  
+
+
+
+
+{%endblock%}
